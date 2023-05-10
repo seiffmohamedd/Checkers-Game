@@ -2,7 +2,7 @@ import pygame
 from AvoidingCircularImport import SQUARE , ROWS , WHITE , RED ,BLACK , BLUE 
 
 
-class Board:
+class CheckersBoard:
     def __init__(self):
         self.board =[] 
         self.selected_piece = None #if there is a selected piece or not selected yet 
