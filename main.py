@@ -32,7 +32,7 @@ def main():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 pass #pass for now
         
-        newBoard.draw_squares(WIN)
+        newBoard.displayBackground(WIN)
         pygame.display.update()
     # pygame.quit() #window    of game is closed fffrrrrrr mnwwww
 
