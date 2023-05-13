@@ -1,4 +1,4 @@
-import pygame 
+import pygame , math
 from AvoidingCircularImport import SQUARE , ROWS , WHITE , RED ,BLACK , BLUE , COLUMNS
 from CheckersPackage.piece import Piece
 
@@ -6,7 +6,6 @@ from CheckersPackage.piece import Piece
 class CheckersBoard:
     def __init__(self):
         self.board =[] 
-        self.selected_piece = None #if there is a selected piece or not selected yet 
         self.red_left = 12  #red pieces are left (initially once game starts) red is the above
         self.black_left = 12 # black pieces are left (initially once game starts) black is down
         self.red_kings=0
@@ -42,6 +41,10 @@ class CheckersBoard:
                     piece.displayThePiece(win)
 
 
+    def get_piece(self, row, col):
+        return self.board[row][col]
+    
+
     def movement(self,piece, row , column):
         self.board[piece.row][piece.column] , self.board[row][column] = self.board[row][column] , self.board[piece.row][piece.column] 
         # swap the two pieces
@@ -49,4 +52,29 @@ class CheckersBoard:
 
         if row==ROWS or row == 0:
             piece.becomeAKing()
+            if piece.color == RED:
+                self.red_kings +=1
 
+            else:
+                self.black_kings +=1
+
+    def get_available_moves(self,piece):
+        moves={}
+        left = piece.column-1
+        right = piece.column+1
+        row = piece.row
+
+        if piece.color == RED or piece.king:
+            pass
+
+        if piece.color == BLACK or piece.king:
+            pass
+
+        def _traverse_left(self,start,stop,step,color,left,skipped=[]):
+            moves={}
+            last=[]
+            for r in range(start,stop,step):
+                if left < 0:
+                    break
+        def _traverse_right(self,start,stop,step,color,right,skipped=[]):
+            pass

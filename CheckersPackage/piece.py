@@ -26,7 +26,7 @@ class Piece:
     def becomeAKing(self):
         self.king=True    
  
-    def displayThePiece(self,win):
+    def displayThePiece(self,win): #draw
         radius = (SQUARE //2)-10
         pygame.draw.circle(win , self.color, (self.x , self.y),radius) # CIRLCE As a Piece
         if self.king == True:
