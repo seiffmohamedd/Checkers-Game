@@ -16,3 +16,5 @@ WHITE = (255 , 255 , 255)
 BLACK=(0,0,0)
 BLUE=(0,0,255)
 
+#EL CROWN for the king piece
+KINGCROWN = pygame.transform.scale(pygame.image.load('CheckersPackage/assets/crown.png'), (44, 25))

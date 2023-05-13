@@ -7,7 +7,7 @@ from CheckersPackage.CheckersBoard import CheckersBoard
 FPS = 45
 
 # making the border size
-WIN = pygame.display.set_mode((WIDTH, HEIGHT)) 
+WINDOW = pygame.display.set_mode((WIDTH, HEIGHT)) 
 
 #title of the game 
 pygame.display.set_caption('Checkers Game')
@@ -32,7 +32,7 @@ def main():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 pass #pass for now
         
-        newBoard.displayBackground(WIN)
+        newBoard.CreateInitialState(WINDOW)
         pygame.display.update()
     # pygame.quit() #window    of game is closed fffrrrrrr mnwwww
 
