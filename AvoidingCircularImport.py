@@ -15,6 +15,8 @@ RED = (255 , 0 , 0 )
 WHITE = (255 , 255 , 255)
 BLACK=(0,0,0)
 BLUE=(0,0,255)
+PURPLE=(216,191,216)
+PINK = (255,192,203)
 
 #EL CROWN for the king piece
 KINGCROWN = pygame.transform.scale(pygame.image.load('CheckersPackage/assets/crown.png'), (44, 25))

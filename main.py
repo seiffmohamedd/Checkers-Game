@@ -1,5 +1,5 @@
 import pygame
-from AvoidingCircularImport import WIDTH , HEIGHT , SQUARE 
+from AvoidingCircularImport import WIDTH , HEIGHT , SQUARE , RED , WHITE , BLACK , BLUE
 from CheckersPackage.gamelogic import Game
 from CheckersPackage.CheckersBoard import CheckersBoard
 
@@ -23,34 +23,28 @@ def getCordinatesByMouse(pos):
 
 #runing the game in event loop every n of seconds to check if there is any change to render 
 def main():
-    #just a var for the event loop of the game running
-    newBoard=CheckersBoard() #instance of the checkers board 
-    game=Game(WINDOW) #instance of the game
-    gameRuning = True
+    run = True
+    clock = pygame.time.Clock()
+    game = Game(WINDOW)
 
-    clock = pygame.time.Clock() #for the FPS
-    # piece=newBoard.get_piece(0,1)
-    # newBoard.movement(piece, 4 ,3)
+    while run:
+        clock.tick(FPS)
 
-
-
-
-    while gameRuning:
-
-        clock.tick(FPS) #tick FPS Defined Above
-        
-        for event in pygame.event.get():  #check event if happened any time
-            if event.type == pygame.QUIT: #if i needed to quit and pressed it turn off the game  
-                gameRuning = False  #and exit the loop
-
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                run = False
+            
             if event.type == pygame.MOUSEBUTTONDOWN:
-                 pass
-                # pos=pygame.mouse.get_pos()
-                # rosw , columsn = getCordinatesByMouse(pos)
-                
+                pos = pygame.mouse.get_pos()
+                row, col = getCordinatesByMouse(pos)
+              
+                if game.turn==RED:
+                    game.selectAPiece(int(row), int(col))
+                    print (int(row), int(col))
+
 
         game.update()
-    # pygame.quit() #window    of game is closed fffrrrrrr mnwwww
-
+    
+    pygame.quit()
 
 main()

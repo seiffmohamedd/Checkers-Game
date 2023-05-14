@@ -36,3 +36,7 @@ class Piece:
         self.row = row
         self.column = column
         self.calculate_Cordinates()
+
+    def __repr__(self):
+        return str(self.color)
+    
