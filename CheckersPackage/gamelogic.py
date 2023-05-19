@@ -9,6 +9,7 @@ class Game:
         # self.newBoard=CheckersBoard() #instance of the checkers board 
         # self.turn= RED
         # self.availableMoves={} #dictionary of open list (forienter ) for next available moves 
+        # self.s
         self._init()
         self.win = win
 
